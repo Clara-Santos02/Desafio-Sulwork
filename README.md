@@ -50,8 +50,10 @@ docker-compose up --build
 Isso irá buildar e rodar backend e frontend juntos, expondo:
 
 Backend: http://localhost:8081
+
 Frontend: http://localhost:4200
 
+---
 
 Funcionalidades:
 
@@ -59,18 +61,23 @@ Funcionalidades:
 
 - Cadastro de Itens de Café: Nome do item, data, colaborador responsável, status
 
+---
+
 Validações:
 
 - Data do café deve ser após a data atual
 
 - Não permite itens duplicados para o mesmo dia
-  
+
+---
 
 Lista de Participantes: Exibe colaboradores e itens cadastrados
 
 Atualização de Status: Permite atualizar status de itens (Pendente, Concluído)
 
 Testes automatizados: Unitários com JUnit 5
+
+---
 
 Contato
 

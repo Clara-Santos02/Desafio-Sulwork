@@ -1,0 +1,29 @@
+<h2>Lista de Itens / Participantes</h2>
+
+<div *ngIf="carregando">Carregando...</div>
+<div *ngIf="erro">{{erro}}</div>
+
+<table border="1" cellpadding="8" *ngIf="!carregando && itens.length">
+  <thead>
+    <tr>
+      <th>Colaborador</th>
+      <th>CPF</th>
+      <th>Item</th>
+      <th>Data</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of itens">
+      <td>{{ i.colaborador?.nome || i.colaboradorNome || '—' }}</td>
+      <td>{{ i.colaborador?.cpf || '—' }}</td>
+      <td>{{ i.nomeItem }}</td>
+      <td>{{ i.data }}</td>
+      <td>{{ i.status }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!carregando && itens.length === 0">
+  Nenhum item cadastrado.
+</div>

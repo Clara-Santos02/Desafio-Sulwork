@@ -1,0 +1,43 @@
+<h2>Cadastro</h2>
+<div style="display:flex;gap:24px;flex-wrap:wrap">
+  <div style="flex:1;min-width:280px">
+    <h3>Colaborador</h3>
+    <form [formGroup]="colaboradorForm" (ngSubmit)="salvarColaborador()">
+      <div>
+        <label>Nome</label><br />
+        <input formControlName="nome" />
+      </div>
+      <div>
+        <label>CPF (11 dígitos)</label><br />
+        <input formControlName="cpf" />
+      </div>
+      <button type="submit">Salvar Colaborador</button>
+    </form>
+  </div>
+
+  <div style="flex:1;min-width:280px">
+    <h3>Item de Café</h3>
+    <form [formGroup]="itemForm" (ngSubmit)="salvarItem()">
+      <div>
+        <label>Nome do item</label><br />
+        <input formControlName="nomeItem" />
+      </div>
+      <div>
+        <label>Data</label><br />
+        <input type="date" formControlName="data" />
+      </div>
+      <div>
+        <label>Colaborador</label><br />
+        <select formControlName="colaboradorId">
+          <option [ngValue]="null">-- selecione --</option>
+          <option *ngFor="let c of colaboradores" [ngValue]="c.id">{{c.nome}} — {{c.cpf}}</option>
+        </select>
+      </div>
+      <button type="submit">Salvar Item</button>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="msg" style="margin-top:12px;padding:8px;background:#e8f5e9;border:1px solid #c8e6c9">
+  {{msg}}
+</div>

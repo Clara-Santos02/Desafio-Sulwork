@@ -26,23 +26,6 @@ O sistema permite:
 
 ---
 
-## **Estrutura do Projeto**
-
-desafio-mv/
-├─ backend/ # Spring Boot
-│ ├─ src/main/java/com/example/demo/
-│ ├─ src/main/resources/application.properties
-│ └─ Dockerfile
-├─ frontend/ # Angular
-│ ├─ src/
-│ ├─ angular.json
-│ └─ Dockerfile
-├─ docker-compose.yml
-└─ README.md
-
-
----
-
 ## **Pré-requisitos**
 
 - Java 17+
